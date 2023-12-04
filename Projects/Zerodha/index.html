@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerodha</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+
+        }
+
+        .navbar{
+            display: flex;
+            justify-content: space-evenly;
+            gap: 15px;
+            font-size: 15px;
+            color: #808080;
+            align-items: center;
+        }
+
+        .menu{
+            height: 18px;
+            width: 18px;
+            /* border: 2px solid black; */
+            /* position: relative; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* column-gap: 2px; */
+            /* row-gap: 5px; */
+
+        }
+
+        .menu span{
+            display: block;
+            /* position: absolute; */
+            height: 2px;
+            width: 100%;
+            background-color:#0e0c0cf5;
+            margin-top: 2px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        section{
+           margin-top: 40px;
+            /* border: 2px solid black; */
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        aside{
+            height: 250px;
+            width: 550px;
+        }
+
+        .headline{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .headline h1{
+            font-size: 40px;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            color: #272626;
+            font-weight: 600;
+        }
+
+        .headline p{
+            font-size:larger;
+            margin-top: 10px;
+            color: #3b3a3a;
+
+        }
+
+        .headline button{
+            background-color: #387ed1;
+            color: white;
+            padding: 8px 20px;
+            font-size: medium;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .headline button:hover{
+            background-color: black;
+        }
+
+        main{
+            display: flex;
+            justify-content: center;
+           gap: 100px;
+           margin-top: 50px;
+        }
+
+        .winner{
+            width: 350px;
+            height: 250px;
+        }
+
+        .largest{
+            width: 450px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            /* text-align: center; */
+        }
+
+        .largest h2{
+           font-weight: 600;
+           font-size: x-large;
+        }
+
+        .largest p{
+            margin-top: 0px;
+        }
+
+        .list-item{
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            color: rgb(44, 43, 43);
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .list ul li{
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo"><img src="./images/logo.svg" alt="" height="15px" width="100px"></div>
+        <div class="navbar">
+            <div class="signup">Signup</div>
+            <div class="about">About</div>
+            <div class="Productus">Productus</div>
+            <div class="Pricing">Pricing</div>
+            <div class="Support">Support</div>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <aside>
+       <img src="./images/landing.png" alt="" height="100%" width="100%">
+    </aside>
+
+    <div class="headline">
+        <h1>Invest in everything</h1>
+        <p>Online platform to invest in stocks, derivatives, mutual funds, and more</p>
+        <button>Sign up now</button>
+    </div>
+
+    <main>
+        <div class="winner">
+            <img src="./images/largest-broker.svg" alt="" height="100%" width="100%">
+        </div>
+        <div class="largest">
+            <h2>Largest stock broker in India</h2>
+            <p>
+                1+ Crore Zerodha clients contribute to
+                over 15% of all retail order volumes in India daily by trading and
+                investing in:
+              </p>
+
+              <div class="list-item">
+                <div class="list">
+                    <ul>
+                        <li>Futures and Options</li>
+                        <li>Commodity derivatives</li>
+                        <li>Currency derivatives</li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>Stocks & IPOs</li>
+                        <li>Direct mutual funds</li>
+                        <li>Bonds and Govt. Securities</li>
+                    </ul>
+                </div>
+              </div>
+
+              <div class="strip-logo">
+                <a href="#"><img src="./images/press-logos.png" alt="" width="100%" height="100%"></a>
+              </div>
+        </div>
+    </main>
+
+</section>
+</body>
+</html>
