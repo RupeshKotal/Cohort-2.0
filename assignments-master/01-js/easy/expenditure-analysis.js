@@ -6,7 +6,21 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+    if (transactions.length === 0) {
+        return undefined;
+    }
+
+    let largestElement = transactions[0];
+
+    for (let i = 1; i < transactions.length; i++) {
+        if (transactions[i] > largestElement) {
+            largestElement = arr[i];
+        }
+    }
+
+    return largestElement;
+
+
 }
 
 module.exports = calculateTotalSpentByCategory;

@@ -9,5 +9,22 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    let Startime = new Date().getTime();
+
+
+    let sum =0;
+    for (let i=0;i<n;i++){
+       sum = sum + i
+    }
+    // console.log(sum);
+
+    let endTime = new Date().getTime()
+
+    let TimeTaken = (endTime-Startime)/1000
+
+    return TimeTaken
 }
+
+let result = calculateTime(100000000000)
+console.log(result);
+
