@@ -1,39 +1,34 @@
-const mongoose = require('mongoose');
+const mongooes = require('mongoose');
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://rupeshkotal99:Asdfghjkl%40786@cluster0.lwxkmgh.mongodb.net/Course-Selling-App');
+mongooes.connect('mongodb+srv://rupeshkotal99:Asdfghjkl%40786@cluster0.lwxkmgh.mongodb.net/Udemy')
 
-// Define schemas
-const AdminSchema = new mongoose.Schema({
-    // Schema definition here
+const adminSchema = new mongooes.Schema({
     username : String,
     password :String
-    
-});
+})
 
-const UserSchema = new mongoose.Schema({
-    // Schema definition here
-    username:String,
-    password:String,
-    purchesedCourse:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Course"
+const userSchema = new mongooes.Schema({
+    username : String,
+    password : String,
+    puchasedCourse:[{
+         type: mongooes.Schema.Types.ObjectId,
+         ref:'Course'
     }]
-});
+})
 
-const CourseSchema = new mongoose.Schema({
-    // Schema definition     
+const CourseSchema = new mongooes.Schema({
     title:String,
-    discription:String,
-    imgelink:String,
-    price:Number
-});
+    description:String,
+    imageLink : String,
+    price: Number
+})
 
-const Admin = mongoose.model('Admin', AdminSchema);
-const User = mongoose.model('User', UserSchema);
-const Course = mongoose.model('Course', CourseSchema);
+const Admin = mongooes.model("Admin",adminSchema);
+const User = mongooes.model("User",userSchema);
+const Course = mongooes.model("Course",CourseSchema);
 
-module.exports = {
+
+module.exports={
     Admin,
     User,
     Course

@@ -1,6 +1,6 @@
 // Middleware for handling auth
 const jwt = require("jsonwebtoken");
-const jwtpassword = require("../index")
+const secret = require("../index")
 
 function adminMiddleware(req, res, next) {
     // Implement admin auth logic
@@ -9,7 +9,7 @@ function adminMiddleware(req, res, next) {
     const token =req.headers.authorization;
     const word = token.split(" ") //bearrer aaaasjndddj => [bearer,aaaasjn]
     const jwtToken = word[1];
-   const decode = jwt.verify(jwtToken,jwtpassword);
+   const decode = jwt.verify(jwtToken,secret);
 
    if(decode.username){
     next()

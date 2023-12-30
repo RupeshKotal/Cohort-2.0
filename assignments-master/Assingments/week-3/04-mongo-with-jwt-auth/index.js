@@ -4,7 +4,7 @@ const app = express();
 const adminRouter = require("./routes/admin")
 const userRouter = require("./routes/user");
 
-const jwtpassword = "RupeshKotal"
+const JWT_Secret = "RupeshKotal"
 
 // Middleware for parsing request bodies
 app.use(bodyParser.json());
@@ -16,4 +16,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-module.exports= jwtpassword;
+module.exports= JWT_Secret;
