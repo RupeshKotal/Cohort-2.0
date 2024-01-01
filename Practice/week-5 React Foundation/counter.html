@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function clicked(){
+        
+            const button = document.querySelector('button').innerHTML
+            const element = button.split(" ")[1];
+            let number = parseInt(element) + 1
+          
+         document.querySelector('button').innerHTML = "Counter " + number 
+        
+
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="clicked()">Counter 0</button>
+</body>
+</html>
