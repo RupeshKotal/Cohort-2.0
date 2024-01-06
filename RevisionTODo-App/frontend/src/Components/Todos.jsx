@@ -6,7 +6,7 @@ function Todos({data}){
                 return <div>
                     <h1>{todo.title}</h1>
                     <h2>{todo.description}</h2>
-                    <button>{todo.complete == false? "mark as complete":"Done"}</button>
+                    <button>{todo.completed == false? "mark as complete":"Done"} </button>
                 </div>
             })
           }
