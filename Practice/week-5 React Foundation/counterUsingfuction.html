@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    
+    <div id="buttonParent">
+
+    </div>
+
+    <script>
+
+        //this is how we initalize state
+        let state = {
+            count:0
+        }
+
+        // this to increase count number
+        function onButtonPress(){
+            state.count++
+            buttonRender()
+        }
+
+        //this will taken care by React
+        function buttonRender(){
+            document.getElementById('buttonParent').innerHTML = "";
+            const component = buttonComponent(state.count);
+            console.log(component);
+            document.getElementById('buttonParent').appendChild(component)
+        }
+
+        //this will we have to wirte for componet
+        function buttonComponent(count){
+            const button = document.createElement('button');
+            button.innerHTML= `Counter ${count}`;
+            button.setAttribute("onclick", "onButtonPress()")
+            return button;
+        }
+
+        buttonRender()
+    </script>
+</body>
+</html>
