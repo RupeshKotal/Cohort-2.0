@@ -1,37 +1,46 @@
 import { useEffect, useState } from "react"
+import axios from "axios"
 
 function App(){
 
-  const [todo,setTodo]=useState([])
-  const[id,setid] = useState(0)
-
-  useEffect(()=>{
-
-    fetch("https://sum-server.100xdevs.com/todos?id={id}").then(async function (res){
-      const response = await res.json();
-      setTodo(response.todos) 
-    })
-  },[id])
-
+ 
+  const[id,setid] = useState(1)
 
   return(
     <div>
-      {todo.map(todos=><Todo key={todos.id}  title={todos.title} description={todos.description} Id={id}></Todo>)}
+     
+     <Todo Id={id}></Todo>
 
       <button onClick={function(){
-        setid(id+1)
-      }}>Click me</button>
+        setid(1)
+      }}>1</button>
+
+<button onClick={function(){
+        setid(2)
+      }}>2</button>
+
+<button onClick={function(){
+        setid(3)
+      }}>3</button>
     </div>
   )
 }
 
 
-function Todo({Id,title,description}){
+function Todo({Id}){
+  const [todo,setTodo]=useState({})
+
+  useEffect(()=>{
+    axios.get("https://sum-server.100xdevs.com/todo?id=" + Id).then(res =>{
+      setTodo(res.data.todo)
+    })
+  },[Id])
+
 return(
   <div>
     <h1>{Id}</h1>
-    <h1>{title}</h1>
-    <h2>{description}</h2>
+    <h1>{todo.title}</h1>
+    <h2>{todo.description}</h2>
   </div>
 )
 }
