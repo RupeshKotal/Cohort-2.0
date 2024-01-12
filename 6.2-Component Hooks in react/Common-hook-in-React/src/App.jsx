@@ -1,6 +1,6 @@
 // // import { useEffect, useState } from "react"
 
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { memo, useState } from "react";
 
 // import React, { useEffect, useMemo, useState } from "react";
@@ -82,33 +82,34 @@ import { memo, useState } from "react";
 //   )
 //  }
 
+//****UseCallback memo */
+// function App(){
 
-function App(){
+//   const [count,setCount]=useState(0);
 
-  const [count,setCount]=useState(0);
+//   let logsomething= useCallback(function (){
+//     console.log("reder logsomething()");
 
-  let logsomething= useCallback(function (){
-    console.log("reder logsomething()");
-
-  },[])
-
-
-  return(
-    <div>
-      <Child onClick={logsomething}></Child>
-
-      <button onClick={()=>{
-        setCount(count+1)
-      }}>{count}</button>
+//   },[])
 
 
-    </div>
-  )
-}
+//   return(
+//     <div>
+//       <Child onClick={logsomething}></Child>
 
-const Child =memo(function({onClick}){
-  console.log("child component render");
+//       <button onClick={()=>{
+//         setCount(count+1)
+//       }}>{count}</button>
 
+
+//     </div>
+//   )
+// }
+
+// const Child =memo(function({onClick}){
+//   console.log("child component render");
+
+//add comment on below
   return(
     <div>
       <button onClick={onClick}>CHild button</button>
@@ -116,6 +117,24 @@ const Child =memo(function({onClick}){
   )
 
 })
+
+
+function useTodos(){
+  const [data,setdata] =useState([])
+  useEffect(("")=>{
+     fetch().then(async (res) =>{
+      const json = res.json()
+      setdata(json.todos)
+     })
+  },[])
+
+  return data
+}
+
+function App(){
+
+  const todosData =useTodos()
+}
 
 export default App;
 
