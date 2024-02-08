@@ -18,7 +18,7 @@ const accountSchema = new m.Schema({
     },
 
     balance:{
-      type:String,
+      type:Number,
       required:true
     }
 })

@@ -20,7 +20,7 @@ userRequests.post('/signup',async (req,res)=>{
     const {success} = userZod.safeParse(body);
 
     if(!success){
-        res.status(411).json({
+     return   res.status(411).json({
             msg: "Invalid input"
         })
     }
@@ -32,7 +32,7 @@ userRequests.post('/signup',async (req,res)=>{
     })
 
     if(userexists){
-        res.status(411).json({
+      return  res.status(411).json({
             msg: "User already exists"
         })
     }
@@ -84,7 +84,7 @@ userRequests.post('/signin', async (req,res)=>{
      const {success} = signinZod.safeParse(body);
 
      if(!success){
-        res.status(411).json({
+      return  res.status(411).json({
             msg: "Invalid input"
         })
     }
@@ -128,7 +128,7 @@ userRequests.put("/update",authmiddalWare,async (req,res)=>{
   const {success}= updateZod.safeParse(req.body)
 
   if(!success){
-    res.json({
+  return  res.json({
         msg:"Error while updating"
     })
   }

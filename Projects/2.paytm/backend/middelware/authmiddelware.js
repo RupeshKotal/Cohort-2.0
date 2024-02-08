@@ -21,8 +21,6 @@ const authmiddalWare = async (req,res,next) =>{
         //*** */ If the verification is successful, it sets the userId property in the request object to the user ID extracted from the decoded token.
         req.middeluserId = decode.userid;
 
-      
-
        next()
     }else(
 
@@ -37,5 +35,5 @@ const authmiddalWare = async (req,res,next) =>{
 }
 
 module.exports={
-    authmiddalWare
+  authmiddalWare
 }
